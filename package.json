@@ -1,0 +1,26 @@
+{
+  "name": "orangehm-login-playwright",
+  "version": "1.0.0",
+  "description": "Poc Login Orange HRM",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --headed --debug",
+    "dev": "npx playwright test --headed",
+    "dev-ui": "npx playwright test --ui --headed",
+    "test-headless": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danxsouza/orangehm-login-playwright.git"
+  },
+  "author": "Danilo Batista de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danxsouza/orangehm-login-playwright/issues"
+  },
+  "homepage": "https://github.com/danxsouza/orangehm-login-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.45.2",
+    "@types/node": "^20.14.11"
+  }
+}
