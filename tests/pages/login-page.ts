@@ -16,10 +16,12 @@ export class LoginPage {
     async loginPage(username: string, password: string) {
         await this.userNameInput.fill(username);
         await this.passwordInput.fill(password);
+        await expect(this.submitButton).toBeVisible()
+        await expect(this.submitButton).toContainText(' Login ');
         await this.submitButton.click();
+
     }
     async loadPage() {
-        //await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
         await this.page.goto(process.env.BASE_URL);
     }
 }
