@@ -7,7 +7,8 @@
     "test": "npx playwright test --headed --debug",
     "dev": "npx playwright test --headed",
     "dev-ui": "npx playwright test --ui --headed",
-    "test-headless": "npx playwright test"
+    "test-headless": "npx playwright test",
+    "test-trace": "npx playwright test --trace on"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "devDependencies": {
     "@playwright/test": "^1.45.2",
     "@types/node": "^20.14.11"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }
