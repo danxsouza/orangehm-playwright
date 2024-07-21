@@ -4,7 +4,7 @@ test.describe('Login Page', () => {
 
     test.beforeEach(async ({ loginPage }) => {
         await loginPage.loadPage();
-    })
+    });
 
 
     test('Accessing the Login page and logging in successfully', async ({ loginPage }) => {
