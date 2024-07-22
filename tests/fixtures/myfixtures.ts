@@ -2,11 +2,13 @@ import { test as base} from '@playwright/test';
 import { LoginPage } from '../pages/login-page'
 import { LogOutPage } from '../pages/logout-page'
 import { forgotPasswordPage } from '../pages/forgotPassword-page'
+import { AboutPage } from '../pages/about'
 
 type myFixtures = {
     loginPage: LoginPage
     logoutPage: LogOutPage
     forgotPasswordPage: forgotPasswordPage
+    aboutPage: AboutPage
 }
 
 export const test = base.extend<myFixtures>({
@@ -20,6 +22,9 @@ export const test = base.extend<myFixtures>({
 
     forgotPasswordPage: async ({ page }, use) => {
         await use(new forgotPasswordPage(page));
+    },
+    aboutPage: async ({ page }, use) => {
+        await use(new AboutPage(page));
     }
 })
 

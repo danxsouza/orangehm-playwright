@@ -21,6 +21,7 @@ export class LoginPage {
         await this.submitButton.click();
 
     }
+
     async loadPage() {
         await this.page.goto(process.env.BASE_URL);
     }
