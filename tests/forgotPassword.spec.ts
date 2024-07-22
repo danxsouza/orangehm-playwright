@@ -1,7 +1,6 @@
 import {test, expect} from './fixtures/myfixtures';
 
 test.describe('Forgot Password', () => {
-
         test.beforeEach(async ({loginPage}) => {
             await loginPage.loadPage();
         });
@@ -11,4 +10,7 @@ test.describe('Forgot Password', () => {
         await forgotPasswordPage.clickForgotPasswordLink();
     });
 
+    test('I click on the cancel button and return main page', async ({ forgotPasswordPage }) => {
+        await forgotPasswordPage.clickCancelButton();
+    })
 });

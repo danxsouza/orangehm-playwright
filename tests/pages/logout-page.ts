@@ -14,9 +14,8 @@ export class LogOutPage {
 
     async logout() {
         await this.dropdownButton.click();
-        //await expect(this.page.locator('text=Login')).toBeVisible();
         await this.logoutButton.click();
-        await this.page.screenshot({path: './tests/screenshot/logout.png', fullPage: true});
+        await this.page.screenshot({path: '../screenshot/logout.png', fullPage: true});
     }
 
 
