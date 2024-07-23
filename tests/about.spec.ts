@@ -1,6 +1,6 @@
 import {test, expect} from './fixtures/myfixtures';
 
-test.describe('Accessing About Page', () => {
+test.describe('Accessing About Page', { tag:'@about' }, () => {
     test.beforeEach(async ({ loginPage }) => {
         await loginPage.loadPage();
         await loginPage.loginPage(process.env.USERNAME, process.env.PASSWORD);

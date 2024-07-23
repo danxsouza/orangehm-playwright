@@ -4,11 +4,13 @@
   "description": "Poc Login Orange HRM",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --headed --debug",
+    "test-debug": "npx playwright test --headed --debug",
+    "test-debug-spec": "npx playwright test help.spec.ts --debug",
     "dev": "npx playwright test --headed",
     "dev-ui": "npx playwright test --ui --headed",
     "test-headless": "npx playwright test",
-    "test-trace": "npx playwright test --trace on"
+    "test-trace": "npx playwright test --trace on",
+    "show-reports": "npx playwright show-report"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 import {test, expect} from './fixtures/myfixtures';
 
-test.describe('Forgot Password', () => {
+test.describe('Forgot Password',  { tag:'@forgotpass' }, () => {
         test.beforeEach(async ({loginPage}) => {
             await loginPage.loadPage();
         });

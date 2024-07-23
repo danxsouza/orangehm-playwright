@@ -1,7 +1,7 @@
 import { test, expect } from './fixtures/myfixtures';
 
 
-test.describe('User should be logout with successfully', () => {
+test.describe('User should be logout with successfully', { tag:'@logout' },() => {
 
     test.beforeEach(async ({ loginPage }) => {
         await loginPage.loadPage();
