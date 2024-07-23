@@ -8,8 +8,8 @@ export class LoginPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.userNameInput = page.locator('input[placeholder="Username"]');
-        this.passwordInput = page.locator('input[placeholder="Password"]');
+        this.userNameInput = page.locator('//input[@placeholder="Username"]');
+        this.passwordInput = page.locator('//input[@placeholder="Password"]');
         this.submitButton = page.locator('button[type="submit"]');
     }
 
