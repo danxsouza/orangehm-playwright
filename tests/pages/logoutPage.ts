@@ -1,7 +1,7 @@
 import {expect, type Page, type Locator} from '@playwright/test';
 
 
-export class LogOutPage {
+export class LogoutPage {
     readonly page: Page;
     readonly dropdownButton: Locator;
     readonly logoutButton: Locator;

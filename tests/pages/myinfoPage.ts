@@ -1,6 +1,6 @@
 import {expect, type Page, type Locator} from '@playwright/test';
 
-export class MyInfoPage {
+export class MyinfoPage {
     readonly page: Page;
     readonly myInfoLink: Locator;
     readonly menuContactDetails: Locator;
