@@ -13,6 +13,10 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   globalSetup: 'utils/globalSetup.ts',
   testDir: './tests',
+  timeout: 30 * 1000,
+  expect: {
+    timeout: 5000
+  },
   retries: 2,
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -31,7 +35,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    // Viewport used for all pages in the context.
     viewport: { width: 1280, height: 720 },
+    // Capture screenshot after each test failure.
     screenshot: 'only-on-failure'
   },
 
@@ -39,7 +45,9 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+        viewport: { width: 2560, height: 1080 },
+      },
     },
 
     // {
