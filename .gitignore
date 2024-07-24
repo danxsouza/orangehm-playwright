@@ -4,4 +4,4 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 *.idea
-/tests/screenshot
+*screenshot
