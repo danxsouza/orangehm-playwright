@@ -3,7 +3,8 @@ import { LoginPage } from '../pages/login-page'
 import { LogOutPage } from '../pages/logout-page'
 import { forgotPassPage } from '../pages/forgotPass-page'
 import { AboutPage } from '../pages/about'
-import {helpPage} from "../pages/help-page";
+import { helpPage } from "../pages/help-page";
+import { MyInfoPage } from "../pages/myInfo-page";
 
 
 type myFixtures = {
@@ -12,6 +13,7 @@ type myFixtures = {
     forgotPasswordPage: forgotPassPage
     aboutPage: AboutPage
     helpPage: helpPage
+    myInfoPage: MyInfoPage
 }
 
 export const test = base.extend<myFixtures>({
@@ -31,6 +33,9 @@ export const test = base.extend<myFixtures>({
     },
     helpPage: async ({ page }, use) => {
         await use(new helpPage(page));
+    },
+    myInfoPage: async ({ page }, use) => {
+        await use(new MyInfoPage(page));
     }
 })
 
