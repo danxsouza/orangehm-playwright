@@ -1,6 +1,6 @@
 import {expect, type Page, type Locator} from '@playwright/test';
 
-export class LoginPage {
+export class LoginPage  {
     readonly page: Page;
     readonly userNameInput: Locator;
     readonly passwordInput: Locator;
@@ -30,5 +30,8 @@ export class LoginPage {
         }
         await this.page.goto(url);
     }
+
+    password: string;
+    username: string;
 
 }
