@@ -27,7 +27,9 @@ export class ForgotPasswordPage {
     async clickCancelButton() {
         await this.forgotPasswordLink.click();
         await this.buttonCancel.click();
-        await expect(this.page).toHaveURL(process.env.BASE_URL);
+        const url: any = process.env.BASE_URL;
+        await expect(this.page).toHaveURL(url);
+        //await expect(this.page).toHaveURL(process.env.BASE_URL);
         await this.page.screenshot({path: './screenshot/forgotPasswordCancel.png', fullPage: true});
     }
 

@@ -1,6 +1,6 @@
-import { expect, type Page, type Locator } from '@playwright/test';
+import {expect, type Page, type Locator} from '@playwright/test';
 
-export class LoginPage {
+export class LoginPage  {
     readonly page: Page;
     readonly userNameInput: Locator;
     readonly passwordInput: Locator;
@@ -13,7 +13,7 @@ export class LoginPage {
         this.submitButton = page.locator('button[type="submit"]');
     }
 
-    async loginPage(username: string, password: string) {
+    async loginPage(username: any, password: any) {
         await this.userNameInput.fill(username);
         await this.passwordInput.fill(password);
         await expect(this.submitButton).toBeVisible()
@@ -23,6 +23,15 @@ export class LoginPage {
     }
 
     async loadPage() {
-        await this.page.goto(process.env.BASE_URL);
+        // await this.page.goto(process.env.BASE_URL);
+        const url = process.env.BASE_URL;
+        if (!url) {
+            throw new Error('BASE_URL environment variable is not set');
+        }
+        await this.page.goto(url);
     }
+
+    password: string;
+    username: string;
+
 }

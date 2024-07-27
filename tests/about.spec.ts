@@ -1,4 +1,4 @@
-import {test, expect} from './fixtures/myfixtures';
+import {test} from './fixtures/myfixtures';
 
 test.describe('Accessing About Page', { tag:'@about' }, () => {
     test.beforeEach(async ({ loginPage }) => {

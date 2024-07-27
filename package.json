@@ -4,6 +4,7 @@
   "description": "Poc Login Orange HRM",
   "main": "index.js",
   "scripts": {
+    "pretest": "tsc --noEmit && eslint tests/",
     "test-debug": "npx playwright test --headed --debug",
     "test-debug-spec": "npx playwright test myinfo.spec.ts --debug",
     "dev": "npx playwright test --headed",
@@ -23,8 +24,13 @@
   },
   "homepage": "https://github.com/danxsouza/orangehm-login-playwright#readme",
   "devDependencies": {
+    "@eslint/js": "^9.7.0",
     "@playwright/test": "^1.45.2",
-    "@types/node": "^20.14.11"
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.11",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^7.17.0"
   },
   "dependencies": {
     "dotenv": "^16.4.5"

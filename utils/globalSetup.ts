@@ -1,7 +1,7 @@
 import { FullConfig } from '@playwright/test';
 import dotenv = require('dotenv');
 
-async function globalSetup(config) {
+async function globalSetup() {
     dotenv.config({
         path: '.env',
         override: true
