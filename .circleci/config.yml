@@ -1,25 +1,15 @@
 version: 2.1
-orbs:
-  circleci-cli: circleci/circleci-cli@0.1.9
 jobs:
-  build:
+  run-test:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.40.0-jammy
-    working_directory: ~/repo
+      - image: mcr.microsoft.com/playwright:v1.23.1-focal
     steps:
       - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: npm install
-      - run: npm run test
-
-      - store_artifacts:
-          path: ./playwright-report
-          destination: playwright-report-first
-      - store_artifacts:
-          path: /tmp/artifacts
+      - run: npm i -D @playwright/test
+      - run: npx playwright install
+      - run: npx playwright install chrome
+      - run: null
+workflows:
+  run-test-workflow:
+    jobs:
+      - run-test
