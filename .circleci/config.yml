@@ -1,16 +1,20 @@
 version: 2.1
+orbs:
+  circleci-cli: circleci/circleci-cli@0.1.9
 jobs:
-  run-test:
+  build:
     docker:
-      - image: mcr.microsoft.com/playwright:latest
+      - image: mcr.microsoft.com/playwright:v1.40.0-jammy
+    working_directory: ~/repo
     steps:
       - checkout
-      - run: npm i -D @playwright/test
-      - run: npx playwright install
-      - run: npx playwright install chrome
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
       - run:
-          name: Run tests
-workflows:
-  run-test-workflow:
-    jobs:
-      - run-test
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run Playwright Tests
+          command: npm test
